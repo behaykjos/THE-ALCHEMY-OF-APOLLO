@@ -1,6 +1,6 @@
 # The Alchemy of Apollo
 
-Projeto web desenvolvido em PHP, HTML, CSS, JavaScript, Bootstrap e MySQL. A aplicação apresenta conteúdos relacionados com Apollo e Michael Jackson e inclui funcionalidades de autenticação, perfis de utilizador e interação entre utilizadores.
+Projeto web desenvolvido em PHP, HTML, CSS, JavaScript, Bootstrap e MySQL. A aplicação apresenta informações acerca do sol e inclui funcionalidades de autenticação, perfis de utilizador e interação entre utilizadores.
 
 ## Funcionalidades principais
 
