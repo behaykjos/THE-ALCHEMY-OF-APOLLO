@@ -1,0 +1,298 @@
+#theme-toggle {
+  transition: background 0.4s ease;
+}
+
+#theme-toggle .icon-sun,
+#theme-toggle .icon-moon {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body:not(.light-mode) .icon-sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+body.light-mode .icon-moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
+
+/* Tema escuro padrão */
+body {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #020b2a , #041d2b);
+  padding: 20px;       /* espaçamento interno */
+  margin-bottom: 20px; /* espaçamento embaixo, útil para celular */
+  line-height: 1.6;    /* deixa a leitura mais agradável */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at center, #020b2a, #041d2b);
+  transition: opacity 0.8s ease;
+  opacity: 1;
+}
+
+/* camada clara por cima (invisível por padrão) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(120deg, #90c2ff, #81c6ff);
+  transition: opacity 0.8s ease;
+  opacity: 0;
+}
+
+/* quando light-mode, inverte opacidades */
+body.light-mode::before { opacity: 0; }
+body.light-mode::after  { opacity: 1; }
+
+header {
+  color: white;
+}
+header .nav-link,
+header .navbar-brand {
+  color: white !important;
+}
+
+p {
+  color: white;
+}
+
+.content img {
+  margin-bottom: 40px; /* pode ajustar */
+}
+
+/* remove margem das imagens dentro de colunas específicas */
+.col-md-4 img,
+.col-md-6 img {
+  margin-bottom: 0 !important;
+}
+
+/* NÃO aplica margin-bottom no logo da navbar */
+.navbar img {
+  margin-bottom: 0 !important;
+}
+
+img:hover {
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f26e33 !important;
+}
+
+.navbar-toggler {
+  border-color: #333 !important;
+}
+
+.dropdown-menu {
+  background: #0a1b3d !important;
+  border: 1px solid #1f2e5a !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dropdown-item {
+  color: #ffffff !important;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background: linear-gradient(90deg, #202a55, #3848a3) !important;
+  color: #f26e33 !important;
+}
+
+.dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.new-rocker-regular {
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navtitle {
+  font-family: "New Rocker", sans-serif;
+  font-weight: normal; /* ou bold se quiser mais grosso */
+  font-size: 20px !important;     /* opcional, para deixar maior */
+}
+
+.title {
+  font-family: "New Rocker", sans-serif;
+  font-weight: normal; /* ou bold se quiser mais grosso */
+  font-size: 40px !important;     /* opcional, para deixar maior */
+  color: rgb(255, 55, 0);
+}
+
+.justificado {
+  text-align: justify !important;
+}
+footer {
+  background: linear-gradient(135deg, rgba(182, 212, 255, 0.8), rgba(105, 193, 255, 0.8));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 60px 40px 30px;
+  margin-top: 80px;
+  text-align: center;
+  position: relative;
+  border-radius: 20px 20px 0 0; /* Bordas arredondadas no topo */
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3); /* Sombra superior */
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+footer .footer-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+footer p {
+  margin: 0 0 20px;
+  font-size: 1.2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+footer li {
+  display: inline;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+footer a:hover {
+  color: #699eff; /* Rosa fofo */
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer a i {
+  font-size: 1.2em;
+}
+
+
+
+
+
+
+
+
+/* 🌞 Tema claro — note que agora o .light-mode vem antes */
+body.light-mode {
+  background: linear-gradient(120deg, #79cff4, #1e9ede);
+  color: rgb(0, 5, 36);
+}
+
+body.light-mode header {
+  color: rgb(0, 5, 36);
+}
+
+body.light-mode p {
+  color: rgb(0, 5, 36);
+}
+
+body.light-mode .nav-link,
+body.light-mode .navbar-brand {
+  color: rgb(0, 5, 36) !important;
+}
+
+body.light-mode .nav-link:hover {
+  color: #f26e33 !important;
+}
+
+body.light-mode .dropdown-menu {
+  background: #a9caff !important;
+  border: 1px solid #6682d4 !important;
+}
+
+body.light-mode .dropdown-item {
+  color: #000 !important;
+}
+
+body.light-mode .dropdown-item:hover,
+body.light-mode .dropdown-item:focus {
+  background: linear-gradient(90deg, #79cff4, #0b8dcc) !important;
+  color: orangered !important;
+}
+
+body.light-mode .dropdown-divider {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* comment theme-aware styling */
+.comment, .reply {
+  background: transparent !important;
+  color: white;
+}
+body.light-mode .comment, body.light-mode .reply {
+  color: black;
+}
+.comment-user {
+  color: #f26e33 !important;
+}
+.comment-time {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.comment-likes, .comment-dislikes {
+  color: inherit;
+  font-weight: bold;
+}
+
